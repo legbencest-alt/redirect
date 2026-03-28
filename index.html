@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Átirányítás...</title>
+  <title>Kapcsolódás...</title>
 
   <style>
     body {
@@ -13,30 +13,48 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #0d1117;
+      background: linear-gradient(135deg, #0d1117, #161b22);
       color: #ffffff;
-      font-family: "Segoe UI", sans-serif;
-      text-align: center;
+      font-family: "Inter", "Segoe UI", sans-serif;
+      overflow: hidden;
     }
 
-    .container {
-      animation: fadeIn 0.6s ease forwards;
+    .card {
+      text-align: center;
+      padding: 40px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 0.8s ease forwards;
+      width: 90%;
+      max-width: 380px;
     }
 
     .spinner {
-      width: 50px;
-      height: 50px;
-      border: 5px solid rgba(255, 255, 255, 0.2);
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(255, 255, 255, 0.15);
       border-top-color: #58a6ff;
       border-radius: 50%;
       animation: spin 1s linear infinite;
-      margin: 0 auto 20px auto;
+      margin: 0 auto 25px auto;
+    }
+
+    h2 {
+      margin: 0 0 10px 0;
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin: 0;
+      opacity: 0.75;
+      font-size: 0.95rem;
     }
 
     @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
+      to { transform: rotate(360deg); }
     }
 
     @keyframes fadeIn {
@@ -44,9 +62,33 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .small {
-      opacity: 0.7;
-      font-size: 0.9rem;
+    /* Háttér animált fényfoltok */
+    .glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(88,166,255,0.25), transparent 70%);
+      filter: blur(80px);
+      animation: float 6s ease-in-out infinite alternate;
+    }
+
+    .glow2 {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(0,255,200,0.2), transparent 70%);
+      filter: blur(80px);
+      animation: float2 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      from { transform: translate(-150px, -100px); }
+      to { transform: translate(50px, 80px); }
+    }
+
+    @keyframes float2 {
+      from { transform: translate(120px, 150px); }
+      to { transform: translate(-80px, -60px); }
     }
   </style>
 
@@ -55,10 +97,13 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="glow"></div>
+  <div class="glow2"></div>
+
+  <div class="card">
     <div class="spinner"></div>
-    <h2>Kapcsolódás a szolgáltatáshoz...</h2>
-    <p class="small">Kérlek várj egy pillanatot</p>
+    <h2>Kapcsolódás a szerverhez...</h2>
+    <p>Kérlek várj egy pillanatot</p>
   </div>
 </body>
 </html>
