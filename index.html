@@ -1,27 +1,3 @@
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kapcsolódás...</title>
-<style>
-  body { margin:0; padding:0; height:100vh; display:flex; justify-content:center; align-items:center; background:#111; color:#fff; font-family:sans-serif; }
-  .card { text-align:center; padding:40px; border-radius:16px; background:rgba(255,255,255,0.05); backdrop-filter:blur(12px); }
-  .spinner { width:60px; height:60px; border:6px solid rgba(255,255,255,0.15); border-top-color:#58a6ff; border-radius:50%; animation:spin 1s linear infinite; margin:0 auto 25px; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-</style>
-
-<!-- JS átirányítás a backend callbackhez -->
 <script>
-  const params = window.location.search;
-  window.location.href = "https://oauth2-authorization.onrender.com/callback" + params;
+  window.location.href = "https://oauth2-authorization.onrender.com/";
 </script>
-</head>
-<body>
-  <div class="card">
-    <div class="spinner"></div>
-    <h2>Kapcsolódás a szerverhez...</h2>
-    <p>Kérlek várj egy pillanatot</p>
-  </div>
-</body>
-</html>
